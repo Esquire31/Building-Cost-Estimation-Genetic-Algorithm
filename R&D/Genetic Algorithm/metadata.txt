@@ -1,0 +1,34 @@
+Ceiling:
+Non asbestor: 1.0
+Gypsum board: 2.0
+
+External_Wall:
+oil: 1.0
+Enamel: 2.0
+Emulsion: 3.0
+
+Internal_Wall:
+Acrylic: 1.0
+Emulsion: 2.0
+Gypsumboard: 3.0
+
+Floor:
+Marble: 1.0
+Vinyl: 2.0
+Laminate: 3.0
+
+Foundation_system:
+MAT: 1.0
+WALL FOOTING: 2.0
+PILE: 3.0
+
+Superstructure:
+RCC: 1.0
+
+Substructure:
+RCC: 1.0
+
+Form_system:
+Ganged: 1.0
+Conventionalwall: 2.0
+
