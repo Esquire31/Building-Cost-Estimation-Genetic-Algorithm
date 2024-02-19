@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-attachment: fixed;
+            background-position: absolute;
+            background-size: cover;
+            background: url('/static/background.jpeg')
+        }
+        @font-face {
+            font-family: opensansb;
+            src: url(Fonts/Open_Sans/OpenSans-Bold.ttf);
+        }
+        @font-face {
+            font-family: cardo;
+            src: url(Fonts/Cardo/Cardo-Bold.ttf)
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost prediction model</title>
+    <link rel="Stylesheet" href="Attrib.css">
+</head>
+<body>
+    <div class="Textbox" id="textbox" style="color:#ffffff; padding-left:2%; padding-top: 2%;">
+        <form action="{{ url_for('calculate')}}" method="post">
+            <input name="text" name="Area_Project" placeholder="Area of Project (Sq. ft)">
+            <br>
+            <input name="text" name="No_floors" placeholder="No. of floors (No.)">
+            <br>
+            <input name="text" name="No_parking" placeholder="No. of parking (No.)">
+            <br>
+            <input name="text" name="Duration" placeholder="Duration (Days)">
+            <br>
+            <input name="text" name="Escalations" placeholder="Escalations (No.)">
+            <br>
+            <input name="text" name="Changes_Range" placeholder="Changes Range (No.)">
+            <br>
+            <input name="text" name="Earthwork" placeholder="Earthwork (No.)">
+            <br>
+            <label for="Foundation">Select a Foundation: (MT)</label>
+            <select id="Foundation" name="Foundation">
+                <option value="Mat">Mat</option>
+                <option value="Pile">Pile</option>
+                <option value="Wall Footing">Wall Footing</option>
+            </select>
+            <br>
+            <label for="External_wall">Select an External wall: (Sq. ft)</label>
+            <select id="External_wall" name="External_wall">
+                <option value="Emulsion">Emulsion</option>
+                <option value="Enamel">Enamel</option>
+                <option value="Oil">Oil</option>
+            </select>
+            <br>
+            <label for="Ceiling">Select a Ceiling: (Sq. ft)</label>
+            <select id="Ceiling" name="Ceiling">
+                <option value="Non_Asbestos">Non Asbestos</option>
+                <option value="Gypsum_Board">Gypsum Board</option>
+            </select>
+            <br>
+            <label for="Internal_wall">Select an Internal wall: (Sq. ft)</label>
+            <select id="Internal_wall" name="Internal_wall">
+                <option value="Acrylic">Acrylic</option>
+                <option value="Emulsion">Emulsion</option>
+                <option value="Gypsum_Board">Gypsum Board</option>
+            </select>
+            <br>
+            <label for="Form_system">Select a Form System:</label>
+            <select id="Form_system" name="Form_system">
+                <option value="Ganged">Ganged</option>
+                <option value="Conventional">Conventional</option>
+            </select>
+            <br>
+            <label for="Substructure">Select a Substructure: (MT)</label>
+            <select id="Substructure" name="Substructure">
+                <option value="RCC">RCC</option>
+            </select>
+            <br>
+            <label for="Superstructure">Select a Superstructure: (MT)</label>
+            <select id="Superstructure" name="Superstructure">
+                <option value="RCC">RCC</option>
+            </select>
+            <br>
+            <label for="Floor">Select a Floor: (Sq. ft)</label>
+            <select id="Floor" name="Floor">
+                <option value="Laminate">Laminate</option>
+                <option value="Vinyl">Vinyl</option>
+                <option value="Marble">Marble</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit">
+        </form>
+        <br>
+        <div id="predict_content" class="content">
+            {{ predict_content }}
+        </div>
+</div>
+</body>
+</html>

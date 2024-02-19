@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+        <style>
+            body {
+                background-color: #000000;
+                background-attachment: fixed;
+                background-position: absolute;
+                background-size: cover;
+                background-image: url('Static/Background.jpeg');
+            }
+        </style>
+		<meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" href="Attrib.css">
+	</head>
+	<body>
+        <div class="Textbox" id="textbox">
+            <form action="{{ url_for('calculate')}}" method="post">
+                <input name="text" id="textbox_i" name="Area_Project" placeholder="Area of Project">
+                <br>
+                <input name="text" id="textbox_i" name="No_floors" placeholder="No. of floors">
+                <br>
+                <input name="text" id="textbox_i" name="No_parking" placeholder="No. of parking">
+                <br>
+                <input name="text" id="textbox_i" name="Floor_Area" placeholder="Floor Area Ratio">
+                <br>
+                <input name="text" id="textbox_i" name="Building_area" placeholder="Building Area Ratio">
+                <br>
+                <input name="text" id="textbox_i" name="Duration" placeholder="Duration">
+                <br>
+                <input name="text" id="textbox_i" name="Escalations" placeholder="Escalations">
+                <br>
+                <input name="text" id="textbox_i" name="Changes_Range" placeholder="Changes Range">
+                <br>
+                <br>
+                <input type="submit">
+            </form>
+            <br>
+            <div id="predict_content" class="content">
+                {{ predict_content }}
+            </div>
+        </div>
+        <div class="popup">
+            <button id="close">&times;</button>
+            <h2>Automatic Pop-Up</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita distinctio fugiat alias iure qui, commodi minima magni ullam aliquam dignissimos?
+            </p>
+            <a href="#">Let's Go</a>
+        </div>
+        <!--Script-->
+            <script type="text/javascript">
+                window.addEventListener("load", function(){
+                setTimeout(
+                function open(event){
+                document.querySelector(".popup").style.display = "block";
+                        },
+                        2000 
+                    )
+                });
+    
+    
+                document.querySelector("#close").addEventListener("click", function(){
+                    document.querySelector(".popup").style.display = "none";
+                });
+            </script>
+    </body>
+</html>
