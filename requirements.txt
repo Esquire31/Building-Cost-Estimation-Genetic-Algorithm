@@ -1,0 +1,9 @@
+flask
+keras
+tensorflow
+numpy
+pandas
+scikit-learn
+pygad
+matplotlib
+scipy
